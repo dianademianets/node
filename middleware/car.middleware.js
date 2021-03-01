@@ -5,7 +5,7 @@ module.exports = {
 
     checkIsModelValid: (req, res, next) => {
         try {
-            const {model, preferLanguage = 'en'} = req.body;
+            const { model, preferLanguage = 'en' } = req.body;
             if (model !== 'string') {
                 throw new Error(errorMessages.REPEAT_email[preferLanguage]);
             }
@@ -17,7 +17,7 @@ module.exports = {
 
     isCarValid: (req, res, next) => {
         try {
-            const {model, price, preferLanguage = 'en'} = req.body;
+            const { model, price, preferLanguage = 'en' } = req.body;
 
             if (!model || !price) {
                 throw new Error('Some filed is empty');

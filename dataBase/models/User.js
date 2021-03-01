@@ -1,14 +1,15 @@
 const { Schema, model } = require('mongoose');
 
 const userScheme = new Schema({
-    login: { type: String, required: true },
+    name: { type: String, required: true },
+    email: { type: String, required: true },
     password: { type: String },
     age: { type: Number },
     cars: [{ type: Schema.Types.Mixed }]
 }, { timestamps: true, toObject: { virtuals: true }, toJSON: { virtuals: true } });
 
 userScheme.virtual('full_name').get(function() {
-    return `${this.login} ${this.password}`;
+    return `${this.name} ${this.email}`;
 });
 
 userScheme.virtual('userCars', {

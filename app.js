@@ -18,7 +18,7 @@ app.listen(5000, () => {
 
 // eslint-disable-next-line no-unused-vars
 function _connectDB() {
-    mongoose.connect('mongodb://localhost:27017/my_database', { useUnifiedTopology: true, useNewUrlParser: true });
+    mongoose.connect('mongodb://localhost:27017/my_database', { useNewUrlParser: true, useUnifiedTopology: true });
     const { connection } = mongoose;
     connection.on('error', (error) => {
         console.log(error);
