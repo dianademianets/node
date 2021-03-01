@@ -16,11 +16,6 @@ module.exports = {
             const { userId } = req.params;
 
             const user = await userService.findUserById(userId);
-
-            console.log('_______________________________-');
-            console.log(user);
-            console.log('_______________________________-');
-
             res.json(user);
         } catch (e) {
             res.json(e.message);

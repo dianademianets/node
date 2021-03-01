@@ -7,8 +7,8 @@ module.exports = {
     },
 
     findCarByUserId: async (carUserId) => {
-        const car = await Car.findById(carUserId);
-        return car;
+        const carId = await Car.findById(carUserId);
+        return carId;
     },
 
     createCar: async (carObject) => {

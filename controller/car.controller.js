@@ -17,10 +17,6 @@ module.exports = {
 
             const car = await carService.findCarByUserId(carId);
 
-            console.log('_______________________________-');
-            console.log(car);
-            console.log('_______________________________-');
-
             res.json(car);
         } catch (e) {
             res.json(e.message);
